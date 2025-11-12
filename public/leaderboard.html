@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaderboard - CodeQuest</title>
+  <link rel="stylesheet" href="/css/leaderboard.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/games.css">
+
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <a href="/">CodeQuest</a>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/games">Games</a></li>
+        <li><a href="/leaderboard" class="active">Leaderboard</a></li>
+        <li id="authLinks"></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="games-hero">
+    <div class="container">
+      <h1 class="games-title">🏆 Global Leaderboard</h1>
+      <p class="games-subtitle">Top players across all mini-games</p>
+    </div>
+  </div>
+
+  <div class="container page-content">
+    <!-- Global Leaderboard -->
+    <div class="leaderboard-section">
+      <div id="globalLeaderboard" class="games-leaderboard">
+        <p style="text-align: center;">Loading leaderboard...</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 CodeQuest. Final Year Project.</p>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+  <script src="/leaderboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Games - CodeQuest</title>
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/auth.css">
+  <link rel="stylesheet" href="/css/games.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <a href="/">CodeQuest</a>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/games" class="active">Games</a></li>
+        <li><a href="/leaderboard">Leaderboard</a></li>
+        <li id="authLinks"></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="games-hero">
+    <div class="container">
+      <h1 class="games-title">🎮 Mini Games</h1>
+      <p class="games-subtitle">Test your coding skills in fun, fast-paced challenges!</p>
+    </div>
+  </div>
+
+  <div class="container page-content">
+    <!-- User Stats -->
+    <div id="userStats" class="user-stats-section" style="display: none;">
+      <h2>Your Game Stats</h2>
+      <div id="statsGrid" class="stats-grid"></div>
+    </div>
+
+    <!-- Games Grid -->
+    <div class="games-grid">
+      <div class="game-card" data-game="code-sprint">
+        <div class="game-icon">⚡</div>
+        <h3 class="game-title">Code Sprint</h3>
+        <p class="game-description">
+          Race against time to answer multiple-choice coding questions. Test your syntax knowledge and output prediction skills!
+        </p>
+        <div class="game-details">
+          <span class="detail-item">⏱️ 60 seconds</span>
+          <span class="detail-item">🎯 10 pts/correct</span>
+        </div>
+        <a href="/games/code-sprint" class="btn btn-primary game-btn">Play Now</a>
+      </div>
+
+      <div class="game-card" data-game="debug-dash">
+        <div class="game-icon">🐛</div>
+        <h3 class="game-title">Debug Dash</h3>
+        <p class="game-description">
+          Fix buggy code in an interactive editor! Write and run JavaScript code to produce the correct output. Auto-progresses on success.
+        </p>
+        <div class="game-details">
+          <span class="detail-item">⏱️ 90 seconds</span>
+          <span class="detail-item">🎯 15-20 pts/fix</span>
+        </div>
+        <a href="/games/debug-dash" class="btn btn-primary game-btn">Play Now</a>
+      </div>
+
+      <div class="game-card" data-game="logic-grid">
+        <div class="game-icon">🧩</div>
+        <h3 class="game-title">Logic Grid</h3>
+        <p class="game-description">
+          Solve algorithm puzzles and logic challenges. Difficulty multipliers reward smart thinking!
+        </p>
+        <div class="game-details">
+          <span class="detail-item">⏱️ 120 seconds</span>
+          <span class="detail-item">🎯 Base × multiplier</span>
+        </div>
+        <a href="/games/logic-grid" class="btn btn-primary game-btn">Play Now</a>
+      </div>
+
+      <div class="game-card" data-game="logic-circuit">
+        <div class="game-icon">⚡</div>
+        <h3 class="game-title">Logic Circuit</h3>
+        <p class="game-description">
+          Drag and drop logic gates (AND, OR, NOT, XOR) to build circuits that match the target truth table output!
+        </p>
+        <div class="game-details">
+          <span class="detail-item">⏱️ 120 seconds</span>
+          <span class="detail-item">🎯 20-30 pts/puzzle</span>
+        </div>
+        <a href="/games/logic-circuit" class="btn btn-primary game-btn">Play Now</a>
+      </div>
+    </div>
+
+    <!-- Global Leaderboard -->
+    <div class="leaderboard-section">
+      <h2>🏆 Global Leaderboard</h2>
+      <p class="section-subtitle">Top players across all mini-games</p>
+      <div id="globalLeaderboard" class="games-leaderboard">
+        <p style="text-align: center;">Loading leaderboard...</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 CodeQuest. Final Year Project.</p>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+  <script src="/games-hub.js"></script>
+</body>
+</html>

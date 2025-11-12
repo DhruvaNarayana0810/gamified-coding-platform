@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Sprint - CodeQuest</title>
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/games.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <a href="/">CodeQuest</a>
+      </div>
+      <ul class="nav-links">
+        
+        <li class="nav-item dropdown">
+          <a href="/games.html">Games ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="/games.html">Games Hub</a></li>
+            <li><a href="/games/code-sprint.html">Code Sprint</a></li>
+            <li><a href="/games/debug-dash.html">Debug Dash</a></li>
+            <li><a href="/games/logic-grid.html">Logic Grid</a></li>
+          </ul>
+        </li>
+        <li><a href="/leaderboard">Leaderboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="game-container">
+    <a href="/games.html" class="btn btn-secondary" aria-label="Back to Games" style="margin-bottom:12px; display:inline-flex; align-items:center; gap:.5rem;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <span style="margin-left:6px;">Back to Games</span>
+    </a>
+    <div class="game-header">
+      <h1>⚡ Code Sprint</h1>
+      <p>Answer as many coding questions as you can in 60 seconds!</p>
+    </div>
+
+    <div class="game-info">
+      <div class="info-item">
+        <div class="info-label">Time Left</div>
+        <div class="info-value" id="timer">60</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Score</div>
+        <div class="info-value" id="score">0</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Question</div>
+        <div class="info-value"><span id="currentQuestion">1</span>/<span id="totalQuestions">10</span></div>
+      </div>
+    </div>
+
+    <div id="gameArea" class="game-play-area">
+      <button onclick="startGame()" class="btn btn-primary btn-large">Start Game</button>
+    </div>
+  </div>
+
+  <div id="countdownOverlay" class="countdown-overlay" style="display: none;">
+    <div class="countdown-number" id="countdownNumber">3</div>
+  </div>
+
+  <div id="winScreen" class="win-screen" style="display: none;">
+    <div class="win-content">
+      <h2>🎉 Game Complete!</h2>
+      <div class="win-score" id="finalScore">0</div>
+      <p style="font-size: 1.5rem;">Points Earned</p>
+      <div class="win-buttons">
+        <button onclick="startGame()" class="btn btn-primary">Play Again</button>
+        <a href="/games.html" class="btn btn-secondary">Back to Games</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+  <script src="/games/code-sprint.js"></script>
+</body>
+</html>

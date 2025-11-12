@@ -1,0 +1,330 @@
+/* Logic Circuit Game Styles */
+
+.circuit-puzzle {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.puzzle-description {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.puzzle-description h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+/* Truth Table */
+.truth-table-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.truth-table-section h4 {
+  color: #667eea;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.truth-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.truth-table th,
+.truth-table td {
+  padding: 0.8rem;
+  text-align: center;
+  border: 2px solid #e0e0e0;
+}
+
+.truth-table th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 700;
+}
+
+.truth-table td {
+  background: #f8f9fa;
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.truth-table .output-col {
+  background: #e3f2fd;
+  color: #667eea;
+}
+
+/* Gate Bank */
+.gate-bank-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.gate-bank-section h4 {
+  color: #667eea;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.gate-bank {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gate {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  user-select: none;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.gate:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+.gate:active {
+  cursor: grabbing;
+}
+
+.gate.dragging {
+  opacity: 0.5;
+}
+
+.gate-icon {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+.gate-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Drop Slots */
+.circuit-slots-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.circuit-slots-section h4 {
+  color: #667eea;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.circuit-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.circuit-input {
+  background: #e3f2fd;
+  color: #667eea;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: 2px solid #667eea;
+}
+
+.drop-slot {
+  width: 120px;
+  height: 120px;
+  border: 3px dashed #ccc;
+  border-radius: 12px;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.drop-slot.drag-over {
+  border-color: #667eea;
+  background: #e3f2fd;
+  transform: scale(1.05);
+}
+
+.drop-slot.filled {
+  border-style: solid;
+  border-color: #667eea;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.slot-content {
+  text-align: center;
+}
+
+.slot-placeholder {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.slot-gate {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.slot-label {
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.remove-gate {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.drop-slot.filled:hover .remove-gate {
+  opacity: 1;
+}
+
+.circuit-output {
+  background: #d4edda;
+  color: #28a745;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: 2px solid #28a745;
+}
+
+.arrow-icon {
+  font-size: 2rem;
+  color: #667eea;
+}
+
+/* Submit Section */
+.submit-section {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.submit-section .btn {
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+}
+
+/* Result Display */
+.result-display {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-display.correct {
+  background: #d4edda;
+  border: 3px solid #28a745;
+  color: #155724;
+}
+
+.result-display.incorrect {
+  background: #f8d7da;
+  border: 3px solid #dc3545;
+  color: #721c24;
+}
+
+.result-display h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.result-message {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.next-button {
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gate-bank {
+    gap: 0.5rem;
+  }
+  
+  .gate {
+    width: 80px;
+    height: 80px;
+    font-size: 1rem;
+  }
+  
+  .gate-icon {
+    font-size: 1.5rem;
+  }
+  
+  .drop-slot {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .circuit-flow {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .arrow-icon {
+    transform: rotate(90deg);
+  }
+}

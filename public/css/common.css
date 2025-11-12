@@ -1,0 +1,226 @@
+/* ============================================
+   COMMON STYLES - Unified with home.css theme
+   ============================================ */
+
+:root {
+    --bg: #f8f9fa;
+    --surface: #ffffff;
+    --card-bg: #ffffff;
+    --muted: #7f8c8d;
+    --text: #2c3e50;
+    --accent: #667eea;
+    --accent-2: #764ba2;
+    --radius: 14px;
+    --shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+    --shadow-soft: 0 4px 15px rgba(102, 126, 234, 0.08);
+}
+
+/* Reset + Layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* NAVBAR */
+.navbar {
+    background: white;
+    box-shadow: 0 2px 20px rgba(102, 126, 234, 0.08);
+    border-bottom: 2px solid rgba(118, 75, 162, 0.08);
+    padding: 1rem 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand a {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background-color: white;
+    color:linear-gradient(135deg, var(--accent), var(--accent-2));;
+    text-decoration: none;
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    align-items: center; /* keep nav items vertically centered */
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+#authLinks {
+    display: flex;
+    flex-direction: row; /* lay auth links out horizontally */
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.login-signup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.authorization {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* Small adjustments for auth link anchors/buttons inside navbar */
+#authLinks a, #authLinks button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.6rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--muted);
+}
+
+#authLinks a:hover, #authLinks button:hover {
+    color: var(--accent);
+    background: rgba(102,126,234,0.04);
+}
+
+/* Dropdown menu for nav (games submenu) */
+.nav-item.dropdown {
+    position: relative;
+}
+
+.nav-item.dropdown>a {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(40% + 8px);
+    left: 0;
+    min-width: 200px;
+    background: var(--surface);
+    border: 1px solid rgba(118, 75, 162, 0.06);
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.08);
+    padding: .35rem;
+    display: none;
+    z-index: 40;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: .55rem .8rem;
+    color: var(--text);
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background: linear-gradient(90deg, rgba(102, 126, 234, 0.06), rgba(118, 75, 162, 0.04));
+    color: var(--accent-2);
+}
+
+/* Buttons */
+.btn {
+    padding: 0.7rem 1.4rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 8s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(118, 75, 162, 0.25);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+.btn-secondary:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* Card Base */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    padding: 1.5rem;
+    border: 1px solid rgba(118, 75, 162, 0.08);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+/* Utility */
+.text-muted {
+    color: var(--muted);
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+.center {
+    text-align: center;
+}
+
+.page {
+    width: 85%;
+    max-width: 1100px;
+    margin: 3rem auto;
+}

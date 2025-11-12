@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debug Dash - CodeQuest</title>
+ 
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/games.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+  <style>
+    .CodeMirror {
+      height: 300px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .editor-container {
+      margin: 2rem 0;
+    }
+    .output-section {
+      margin-top: 1.5rem;
+    }
+    .output-box {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 1rem;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      min-height: 60px;
+      white-space: pre-wrap;
+    }
+    .output-correct {
+      border: 3px solid #28a745;
+    }
+    .output-incorrect {
+      border: 3px solid #dc3545;
+    }
+    .challenge-description {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      border-left: 4px solid #667eea;
+    }
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <a href="/">CodeQuest</a>
+      </div>
+      <ul class="nav-links">
+  
+        <li><a href="/games">Games</a></li>
+        <li><a href="/leaderboard">Leaderboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="game-container">
+    <div class="game-header">
+      <h1>🐛 Debug Dash</h1>
+      <p>Fix buggy code and run it to see if it produces the correct output!</p>
+    </div>
+
+    <div class="game-info">
+      <div class="info-item">
+        <div class="info-label">Time Left</div>
+        <div class="info-value" id="timer">90</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Score</div>
+        <div class="info-value" id="score">0</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Challenge</div>
+        <div class="info-value"><span id="currentChallenge">1</span>/5</div>
+      </div>
+    </div>
+
+    <div id="gameArea" class="game-play-area">
+      <button onclick="startGame()" class="btn btn-primary btn-large">Start Debugging</button>
+    </div>
+  </div>
+
+  <div id="countdownOverlay" class="countdown-overlay" style="display: none;">
+    <div class="countdown-number" id="countdownNumber">3</div>
+  </div>
+
+  <div id="winScreen" class="win-screen" style="display: none;">
+    <div class="win-content">
+      <h2>🎉 All Bugs Fixed!</h2>
+      <div class="win-score" id="finalScore">0</div>
+      <p style="font-size: 1.5rem;">Points Earned</p>
+      <div class="win-buttons">
+        <button onclick="startGame()" class="btn btn-primary">Debug Again</button>
+        <a href="/games" class="btn btn-secondary">Back to Games</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+  <script src="/app.js"></script>
+  <script src="/games/debug-dash.js"></script>
+</body>
+</html>

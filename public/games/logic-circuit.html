@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logic Circuit - CodeQuest</title>
+  
+  <link rel="stylesheet" href="/css/games.css">
+  <link rel="stylesheet" href="/css/logic-circuit.css">
+    <link rel="stylesheet" href="/css/common.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <a href="/">CodeQuest</a>
+      </div>
+      <ul class="nav-links">
+       
+        <li><a href="/games">Games</a></li>
+        <li><a href="/leaderboard">Leaderboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="game-container">
+    <div class="game-header">
+      <h1>⚡ Logic Circuit Builder</h1>
+      <p>Drag and drop logic gates to match the target truth table!</p>
+    </div>
+
+    <div class="game-info">
+      <div class="info-item">
+        <div class="info-label">Time Left</div>
+        <div class="info-value" id="timer">120</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Score</div>
+        <div class="info-value" id="score">0</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Puzzle</div>
+        <div class="info-value"><span id="currentPuzzle">1</span>/5</div>
+      </div>
+    </div>
+
+    <div id="gameArea" class="game-play-area">
+      <button onclick="startGame()" class="btn btn-primary btn-large">Start Building</button>
+    </div>
+  </div>
+
+  <div id="countdownOverlay" class="countdown-overlay" style="display: none;">
+    <div class="countdown-number" id="countdownNumber">3</div>
+  </div>
+
+  <div id="winScreen" class="win-screen" style="display: none;">
+    <div class="win-content">
+      <h2>🎉 All Circuits Complete!</h2>
+      <div class="win-score" id="finalScore">0</div>
+      <p style="font-size: 1.5rem;">Points Earned</p>
+      <div class="win-buttons">
+        <button onclick="startGame()" class="btn btn-primary">Build Again</button>
+        <a href="/games" class="btn btn-secondary">Back to Games</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+  <script src="/games/logic-circuit.js"></script>
+</body>
+</html>
