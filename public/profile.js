@@ -9,7 +9,6 @@ async function checkAuth() {
     if (data.authenticated) {
       authLinks.innerHTML = `
         <li><a href="/profile">Profile</a></li>
-        <li><span class="xp-badge">${data.user.xp} XP</span></li>
         <li><a href="#" onclick="logout(event)" class="btn btn-small">Logout</a></li>
       `;
       loadProfile();
